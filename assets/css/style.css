@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    background-color: #e7e7e7;
+    grid-template-areas: 
+        "navbar"
+        "sort-by"
+        "main"
+        "footer"
+    ;
+    grid-template-rows: 1fr 1fr 8fr 20fr;
+  
+}
+
+header {
+    grid-area: navbar;
+    background-color: black;
+}
+
+nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 70%;
+    margin-left: 20px;
+}
+
+label img {
+    width: 35px;
+}
+
+.bar-btn {
+    cursor: pointer;
+}
+
+.nav-menu-desktop {
+    display: none;
+}
+
+.nav-menu {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    background-color: rgba(0, 0, 0, 0.894);
+    top: 100px;
+    text-align: center;
+    transition: all .5s;
+
+}
+
+.nav-menu li {
+    display: none;
+    line-height: 30px;
+    margin: 30px;
+    transition: all .5s;
+}
+
+.nav-menu li a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-menu li a.active {
+    color: rgb(148, 1, 1);
+    transition: .3s;
+}
+
+.nav-menu li a:hover {
+    color: rgb(148, 1, 1);
+
+}
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .nav-menu {
+    height: 100vh;
+}
+
+#check:checked ~ .nav-menu li {
+    display: block;
+}
+
+.sort-by {
+    grid-area: sort-by;
+    background-color: black;
+}
+
+.sort-by {
+    text-align: center;
+    color: white;
+    padding: 0.7rem;
+}
+
+.sort-by select {
+    width: 90%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+main {
+    grid-area: main;
+    background-color: black;
+}
+
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.card {
+    display: none;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.651);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.326);
+    background-image: url("https://github.com/Jesus-Medina/SysAdmin-Store/blob/main/assets/imgs/fondo.jpg?raw=true");
+    margin: 15px 20px;
+}
+
+.card-show {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.651);
+    box-shadow: 0 0px 15px rgb(255, 255, 255);
+    background-image: url("https://github.com/Jesus-Medina/SysAdmin-Store/blob/main/assets/imgs/fondo.jpg?raw=true");
+    margin: 15px 20px;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-title {
+    color: white;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 30px;
+    margin-bottom: 5%;
+}
+
+.pagination-container {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+  
+.pagination {
+    padding: 2rem;
+}
+
+.pagination a {
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+}
+  
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.derechos {
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.derechos img {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.derechos-link {
+    color: red;
+}
+
+hr {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media (min-width: 575px) {
+    .grid-container {
+        display: grid;
+        height: 100vh;
+        width: 100%;
+        background-color: #e7e7e7;
+        grid-template-areas: 
+            "navbar sort-by"
+            "navbar main"
+            "navbar main"
+            "footer main"
+        ;
+        grid-template-rows: 1.8fr 6fr 6fr 3fr;
+        grid-template-columns: 2fr 10fr;
+      
+    }
+
+    header {
+        background-image: linear-gradient(to left, #000000,  #000000, #000000, #000000, #000000,#000000, #000000, #000000, #000000, #031603);
+    }
+
+    .container-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 75%;
+        margin: 0;
+    }
+
+    nav {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    input, label {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu-desktop {
+        display: block;
+    }
+
+    .nav-menu-desktop li a{
+        display: flex;
+        color: white;
+        justify-content: center;
+    }
+
+    .nav-menu-desktop li p {
+        visibility: hidden;
+    }
+
+    .nav-menu-desktop li a:hover p {
+        visibility: visible;
+    }
+
+    .nav-menu-desktop li {
+        font-size: 1.2rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-top: 0.5rem;
+        transition: background-color .4s;
+    }
+    
+    .nav-menu-desktop li:hover {
+        background-color: green;
+    }
+
+    main {
+        display: grid;
+        grid-template-rows: 9fr 1fr;
+        margin: 0;
+        padding: 0;
+    }
+
+    .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+        gap: 1rem;
+        margin: 1rem;
+        margin-bottom: 0;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        border: 1px solid rgba(128, 128, 128, 0.651);
+        box-shadow: 0 0px 15px rgb(255, 255, 255);
+        background-image: url("https://github.com/Jesus-Medina/SysAdmin-Store/blob/main/assets/imgs/fondo.jpg?raw=true");
+        margin: 15px 20px;
+    }   
+
+    .card-img-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+    }
+
+    .card-title {
+        color: white;
+        margin: 10px;
+    }
+
+    .pagination-container {
+        background-image: url("https://github.com/Jesus-Medina/SysAdmin-Store/blob/main/assets/imgs/pagination.jpg?raw=true");
+        background-position: center;
+        background-size: cover;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to left, #000000,  #000000, #000000, #000000, #000000,#000000, #000000, #000000, #000000, #031603);
+
+    }
+}
