@@ -309,7 +309,7 @@ hr {
 
     .gallery-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
         gap: 1rem;
         margin: 1rem;
         margin-bottom: 0;
