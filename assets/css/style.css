@@ -32,6 +32,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px;
 }
 
 .logo {
@@ -41,6 +42,7 @@ nav {
 
 label img {
     width: 35px;
+    margin-right: 15px;
 }
 
 .bar-btn {
@@ -208,7 +210,7 @@ footer {
 }
 
 .derechos-link {
-    color: red;
+    color: green;
 }
 
 hr {
